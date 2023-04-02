@@ -3,5 +3,13 @@ from .models import category,post
 
 # Register your models here.
 
-admin.site.register(category)
-admin.site.register(post)
+class categoryadmin(admin.ModelAdmin):
+    list_display=('category_id','title',)
+
+class postadmin(admin.ModelAdmin):
+    list_display=('post_id','title',)
+
+
+
+admin.site.register(category,categoryadmin)
+admin.site.register(post,postadmin)
