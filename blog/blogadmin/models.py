@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce.models import HTMLField
 
 # Create your models here.
 
@@ -16,5 +17,5 @@ class post(models.Model):
     title=models.CharField(max_length=100)
     image=models.ImageField(upload_to='category/')
     categ=models.ForeignKey(category,on_delete=models.CASCADE)
-    content=models.TextField()
+    content = HTMLField()
     date=models.DateTimeField(auto_now_add=True,null=True)
