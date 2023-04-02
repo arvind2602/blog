@@ -15,7 +15,7 @@ class category(models.Model):
 class post(models.Model):
     post_id=models.AutoField(primary_key=True)
     title=models.CharField(max_length=100)
-    image=models.ImageField(upload_to='category/')
+    image=models.ImageField(upload_to='post/')
     categ=models.ForeignKey(category,on_delete=models.CASCADE)
     content = HTMLField()
     date=models.DateTimeField(auto_now_add=True,null=True)
